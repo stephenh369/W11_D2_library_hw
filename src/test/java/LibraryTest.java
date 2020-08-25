@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 public class LibraryTest {
 
     private Library library;
+    private Library emptyLibrary;
     private Book book1;
     private Book book2;
     private Book book3;
@@ -21,6 +22,17 @@ public class LibraryTest {
     @Test
     public void canAddBooks() {
         library.addBook(book1);
-        assertEquals(1, library.totalBooks());
+        library.addBook(book2);
+        library.addBook(book3);
+        assertEquals(3, library.totalBooks());
+    }
+
+    @Test
+    public void libraryFull() {
+        emptyLibrary = new Library(0);
+        emptyLibrary.addBook(book2);
+        emptyLibrary.addBook(book3);
+        assertEquals(0, emptyLibrary.totalBooks());
+
     }
 }
