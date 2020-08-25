@@ -53,4 +53,12 @@ public class LibraryTest {
         assertEquals(1, borrower1.totalBorrowed());
         assertEquals(0, library.totalBooks());
     }
+
+    @Test
+    public void canAddToGenreStock() {
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+        assertEquals(3, library.totalGenreStock());
+    }
 }
