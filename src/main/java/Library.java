@@ -39,8 +39,11 @@ public class Library {
         for (String i : genreStock.keySet()) {
             if (i == book.getGenre()) {
                 int current = genreStock.get(i);
-                genreStock.put(book.getGenre(), current -1);
+                genreStock.put(book.getGenre(), current - 1);
             }
+        }
+        if (genreStock.containsValue(0)) {
+            this.genreStock.remove(book.getGenre());
             this.books.remove(book);
         }
     }

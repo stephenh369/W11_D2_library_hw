@@ -68,7 +68,6 @@ public class LibraryTest {
         library.addBook(book1);
         library.addBook(book2);
         library.removeBook(book2);
-        assertEquals(2, library.totalGenreStock());
-        assertEquals(true, library.getGenreStock().containsValue(0));
+        assertEquals(1, library.totalGenreStock());
     }
 }
