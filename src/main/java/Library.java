@@ -37,5 +37,11 @@ public class Library {
 
     public void removeBook(Book book) {
         this.books.remove(book);
+        for (String i : genreStock.keySet()) {
+            if (genreStock.containsKey(book)) {
+                int current = genreStock.get(i);
+                genreStock.put(book.getGenre(), current-1);
+            }
+        }
     }
 }

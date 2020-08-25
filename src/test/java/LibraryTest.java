@@ -61,4 +61,13 @@ public class LibraryTest {
         library.addBook(book3);
         assertEquals(3, library.totalGenreStock());
     }
+
+    @Test
+    public void canRemoveFromGenreStock() {
+        library.addBook(book1);
+        library.addBook(book1);
+        library.addBook(book2);
+        library.removeBook(book2);
+        assertEquals(2, library.totalGenreStock());
+    }
 }
